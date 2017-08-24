@@ -1,5 +1,9 @@
 #include <stdio.h>
+#if TARGET_OS_MAC
+#include <sys/malloc.h>
+#else
 #include <malloc.h>
+#endif
 #include <string.h>
 
 #include "code.h"
