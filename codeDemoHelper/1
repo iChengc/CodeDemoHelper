@@ -1,0 +1,32 @@
+initWebView(view);
+        loadUrl();
+        getToolbar().setLogo(R.drawable.ic_toolbar_close);
+        View logoView = getLogoView();
+        if (logoView != null) {
+            logoView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                }
+            });
+        }
+
+--------
+if (!TextUtils.isEmpty(getUrl())) {
+            if (getUrl().startsWith("http") || getUrl().startsWith("file://")) {
+                mWebView.loadUrl(getUrl());
+            } else {
+                mWebView.loadData(getUrl(), "text/html", "utf-8");
+            }
+        }
+--------
+ProductSummary(IProductRealm productRealm) {
+            if (productRealm == null) {
+                return;
+            }
+
+            sku = productRealm.getSku();
+            name = productRealm.getName();
+            image_url = productRealm.getImage_url();
+            sale_price = productRealm.getSale_price();
+        }
