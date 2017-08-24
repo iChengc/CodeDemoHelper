@@ -1,5 +1,5 @@
 #include <stdio.h>
-#if TARGET_OS_MAC
+#ifdef TARGET_OS_MAC
 #include <sys/malloc.h>
 #else
 #include <malloc.h>

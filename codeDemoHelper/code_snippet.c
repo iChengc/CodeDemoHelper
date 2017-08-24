@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include "utils.h"
 #include <string.h>
+#ifdef TARGET_OS_MAC
+#include <sys/malloc.h>
+#else
 #include <malloc.h>
+#endif
 
 #include "code_snippet.h"
 #include "code.h"
