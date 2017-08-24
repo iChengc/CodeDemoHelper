@@ -18,6 +18,6 @@ Please see the example file 1.txt
 2. Run the application CodeDemoHelper and input the code file name such as 1.txt
 After this all will done
 
-Up key to paste the code snippet
-Left key to jump pre-code snippet
-Right key to jump next-code snippet
+#### Up key to paste the code snippet
+#### Left key to jump pre-code snippet
+#### Right key to jump next-code snippet
