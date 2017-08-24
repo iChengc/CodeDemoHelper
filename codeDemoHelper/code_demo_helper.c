@@ -59,7 +59,7 @@ static void copyCode2clipboard(char *code) {
 	}
 
 	char *cacheFile = "./.cache";
-	char *cpShell = "xclip -selection clipboard ./.cache ";
+	char *cpShell = "./cp.sh ./.cache ";
 
     // use a cache file to cache the code snippet, this is a workround approch
 	FILE *fp = fopen(cacheFile, "w");
