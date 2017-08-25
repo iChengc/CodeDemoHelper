@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "utils.h"
 #include <string.h>
-#ifdef TARGET_OS_MAC
+#ifdef __APPLE__
 #include <sys/malloc.h>
 #else
 #include <malloc.h>

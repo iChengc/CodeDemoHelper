@@ -11,6 +11,7 @@ typedef struct CS {
 
 /**
  * Parse the code snippet from a specify file.
+ *
  * @param fileName the name of the file.
  * @divider the divider of the code snippet
  */

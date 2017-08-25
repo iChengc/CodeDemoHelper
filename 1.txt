@@ -1,0 +1,44 @@
+static void codeSnippetWasFound(CodeSnippet** p, Code* code) {
+	CodeSnippet *t = *p, *cs = malloc(sizeof(CodeSnippet));
+	cs->code = code;
+	if (t == null) {
+		cs->order = 1;
+		cs->pre = null;
+		*p = cs;
+	} else {
+		while(t->next != null) {
+			t = t->next;
+		}
+		cs->pre = t;
+		cs->order = t->order + 1;
+		t->next = cs;
+	}
+}
+
+--------
+static void copyCode2clipboard(char *code) {
+	if (code == null) {
+		return;
+	}
+
+	char *cacheFile = "./.cache";
+	char *cpShell = "./cp.sh ./.cache ";
+
+	FILE *fp = fopen(cacheFile, "w");
+	if (fp == null) {
+		return;
+	}
+
+	fwrite(code, sizeof(char), strlen(code), fp);
+	fclose(fp);
+
+	system(cpShell);
+
+    system("rm ./.cache ");
+}
+--------
+void jump2NextSnippet(xhkEvent e, void *r1, void *r2, void *r3) {
+	if (codeSnippets != null && codeSnippets->next != null) {
+		codeSnippets = codeSnippets->next;
+	}
+}
