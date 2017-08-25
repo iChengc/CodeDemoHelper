@@ -1,22 +1,14 @@
 //
-//  MacHotKeyRegister.h
-//  JFHotkeyManager
+//  HotkeyRegisterMac.h
+//  HotkeyRegisterMac
 //
 //  Created by Developer on 2017/8/25.
+//  Copyright © 2017年 Developer. All rights reserved.
 //
-//
-
 #ifndef MacHotKeyRegister_h
 #define MacHotKeyRegister_h
-
 #include <stdio.h>
-typedef void (*CALLBACK)(int);
-
-@interface Bridge : NSObject {
-}
 
 void registerHotKey(void (* func)(int));
-
-@end
 
 #endif /* MacHotKeyRegister_h */

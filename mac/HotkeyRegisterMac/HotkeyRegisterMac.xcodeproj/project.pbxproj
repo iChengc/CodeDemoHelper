@@ -1,0 +1,278 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8B3680951F5019EA00EF5B39 /* HotkeyRegisterMac.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B3680941F5019EA00EF5B39 /* HotkeyRegisterMac.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8B3680971F5019EA00EF5B39 /* HotkeyRegisterMac.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3680961F5019EA00EF5B39 /* HotkeyRegisterMac.m */; };
+		8B3680A31F501A2300EF5B39 /* Bridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B36809D1F501A2300EF5B39 /* Bridge.h */; };
+		8B3680A41F501A2300EF5B39 /* Bridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8B36809E1F501A2300EF5B39 /* Bridge.mm */; };
+		8B3680A51F501A2300EF5B39 /* JFHotkeyManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B36809F1F501A2300EF5B39 /* JFHotkeyManager.h */; };
+		8B3680A61F501A2300EF5B39 /* JFHotkeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3680A01F501A2300EF5B39 /* JFHotkeyManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8B3680911F5019EA00EF5B39 /* libHotkeyRegisterMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHotkeyRegisterMac.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B3680941F5019EA00EF5B39 /* HotkeyRegisterMac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotkeyRegisterMac.h; sourceTree = "<group>"; };
+		8B3680961F5019EA00EF5B39 /* HotkeyRegisterMac.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotkeyRegisterMac.m; sourceTree = "<group>"; };
+		8B36809D1F501A2300EF5B39 /* Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
+		8B36809E1F501A2300EF5B39 /* Bridge.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Bridge.mm; sourceTree = "<group>"; };
+		8B36809F1F501A2300EF5B39 /* JFHotkeyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFHotkeyManager.h; sourceTree = "<group>"; };
+		8B3680A01F501A2300EF5B39 /* JFHotkeyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFHotkeyManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8B36808E1F5019EA00EF5B39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8B3680881F5019EA00EF5B39 = {
+			isa = PBXGroup;
+			children = (
+				8B3680931F5019EA00EF5B39 /* HotkeyRegisterMac */,
+				8B3680921F5019EA00EF5B39 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8B3680921F5019EA00EF5B39 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8B3680911F5019EA00EF5B39 /* libHotkeyRegisterMac.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8B3680931F5019EA00EF5B39 /* HotkeyRegisterMac */ = {
+			isa = PBXGroup;
+			children = (
+				8B36809D1F501A2300EF5B39 /* Bridge.h */,
+				8B36809E1F501A2300EF5B39 /* Bridge.mm */,
+				8B36809F1F501A2300EF5B39 /* JFHotkeyManager.h */,
+				8B3680A01F501A2300EF5B39 /* JFHotkeyManager.m */,
+				8B3680941F5019EA00EF5B39 /* HotkeyRegisterMac.h */,
+				8B3680961F5019EA00EF5B39 /* HotkeyRegisterMac.m */,
+			);
+			path = HotkeyRegisterMac;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8B36808F1F5019EA00EF5B39 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B3680951F5019EA00EF5B39 /* HotkeyRegisterMac.h in Headers */,
+				8B3680A31F501A2300EF5B39 /* Bridge.h in Headers */,
+				8B3680A51F501A2300EF5B39 /* JFHotkeyManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8B3680901F5019EA00EF5B39 /* HotkeyRegisterMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B36809A1F5019EA00EF5B39 /* Build configuration list for PBXNativeTarget "HotkeyRegisterMac" */;
+			buildPhases = (
+				8B36808D1F5019EA00EF5B39 /* Sources */,
+				8B36808E1F5019EA00EF5B39 /* Frameworks */,
+				8B36808F1F5019EA00EF5B39 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HotkeyRegisterMac;
+			productName = HotkeyRegisterMac;
+			productReference = 8B3680911F5019EA00EF5B39 /* libHotkeyRegisterMac.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8B3680891F5019EA00EF5B39 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = Developer;
+				TargetAttributes = {
+					8B3680901F5019EA00EF5B39 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 8B36808C1F5019EA00EF5B39 /* Build configuration list for PBXProject "HotkeyRegisterMac" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8B3680881F5019EA00EF5B39;
+			productRefGroup = 8B3680921F5019EA00EF5B39 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8B3680901F5019EA00EF5B39 /* HotkeyRegisterMac */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8B36808D1F5019EA00EF5B39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B3680A41F501A2300EF5B39 /* Bridge.mm in Sources */,
+				8B3680971F5019EA00EF5B39 /* HotkeyRegisterMac.m in Sources */,
+				8B3680A61F501A2300EF5B39 /* JFHotkeyManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8B3680981F5019EA00EF5B39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		8B3680991F5019EA00EF5B39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		8B36809B1F5019EA00EF5B39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = ./include;
+			};
+			name = Debug;
+		};
+		8B36809C1F5019EA00EF5B39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = ./include;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8B36808C1F5019EA00EF5B39 /* Build configuration list for PBXProject "HotkeyRegisterMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B3680981F5019EA00EF5B39 /* Debug */,
+				8B3680991F5019EA00EF5B39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B36809A1F5019EA00EF5B39 /* Build configuration list for PBXNativeTarget "HotkeyRegisterMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B36809B1F5019EA00EF5B39 /* Debug */,
+				8B36809C1F5019EA00EF5B39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8B3680891F5019EA00EF5B39 /* Project object */;
+}
