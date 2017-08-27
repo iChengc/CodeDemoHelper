@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #ifdef __APPLE__
 #include <sys/malloc.h>
@@ -8,6 +9,7 @@
 
 #include "code.h"
 #include "utils.h"
+#include "stdafx.h"
 
 char* expandMemory(int originLen, int *remainingLen, char* newCode) {
 	if (newCode != null && strlen(newCode) > *remainingLen) {

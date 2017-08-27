@@ -10,6 +10,7 @@
 #include "code_snippet.h"
 #include "code.h"
 
+const char *divider="--------";
 static void codeSnippetWasFound(CodeSnippet** p, Code* code) {
 	CodeSnippet *t = *p, *cs = malloc(sizeof(CodeSnippet));
 	cs->code = code;
@@ -27,7 +28,7 @@ static void codeSnippetWasFound(CodeSnippet** p, Code* code) {
 	}
 }
 
-CodeSnippet* parseFromFile(char *fileName, char *divider) {
+CodeSnippet* parseFromFile(char *fileName) {
 	// FILE * fopen(const char * path, const char * mode);
 	char line[1024];
 	CodeSnippet* ret = null;
