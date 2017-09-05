@@ -18,7 +18,7 @@ Then follow the following steps to install:
 ```
 
 ## How to use
-1. You should save all of the demo code snippets to one file, use *"--------"* to seperate the different code snippet.
+1. You should save all of the demo code snippets to one file, use **"--------"** to seperate the different code snippet.
 Please see the example file 1.txt
 2. Run the application CodeDemoHelper and input the code file path such as 1.txt
 After this all will done. 
