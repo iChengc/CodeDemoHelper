@@ -1,8 +1,8 @@
 # Code demo Helper
 A tool for code demo. It used to paste code snippet one by one which prepared before demo.
 ## How to install
-// ### Mac
-// 1. First you need download XQuartz from [here](https://dl.bintray.com/xquartz/downloads/XQuartz-2.7.11.dmg)
+[^_^]: ### Mac
+[^_^]: 1. First you need download XQuartz from [here](https://dl.bintray.com/xquartz/downloads/XQuartz-2.7.11.dmg)
 ### Linux (ubuntu)
 1. First you should download xclip use command: 
 ```sh
