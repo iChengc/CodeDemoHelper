@@ -9,13 +9,14 @@
 
 #include "code.h"
 #include "utils.h"
-#include "stdafx.h"
 
 char* expandMemory(int originLen, int *remainingLen, char* newCode) {
 	if (newCode != null && strlen(newCode) > *remainingLen) {
 		*remainingLen = originLen + strlen(newCode) + 1024 - *remainingLen;
 	}
-	return malloc((*remainingLen) * sizeof(char));
+	char * ret = malloc((*remainingLen) * sizeof(char));
+	memset(ret, 0, (*remainingLen) * sizeof(char));
+	return ret;
 }
 
 Code* createCode(char *code) {
@@ -31,17 +32,27 @@ Code* createCode(char *code) {
 void appendCode(Code *code, char *newCode) {
 	int remainingLen;
 	char *t;
+	int legthOfCode = strlen(newCode);
 	if (code == null) {
 		return;
 	}
 
 	remainingLen = code->totalLen - code->len;
-	if (strlen(newCode) < remainingLen) {
+	
+	if (legthOfCode < remainingLen) {
+#ifdef _WIN32
+		strcat_s(code->code, code->totalLen, newCode);
+#else
 		strcat(code->code, newCode);
+#endif // _WIN32
 	} else {
 		t = expandMemory(code->totalLen, &remainingLen, newCode);
 		memcpy(t, code->code, code->len);
+#ifdef _WIN32
+		strcat_s(t, remainingLen, newCode);
+#else
 		strcat(t, newCode);
+#endif // _WIN32
 		freeCode(code);
 		code->code = t;
 		code->totalLen = remainingLen;

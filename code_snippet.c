@@ -13,6 +13,7 @@
 const char *divider="--------";
 static void codeSnippetWasFound(CodeSnippet** p, Code* code) {
 	CodeSnippet *t = *p, *cs = malloc(sizeof(CodeSnippet));
+	memset(cs, 0, sizeof(CodeSnippet));
 	cs->code = code;
 	if (t == null) {
 		cs->order = 1;
@@ -31,15 +32,25 @@ static void codeSnippetWasFound(CodeSnippet** p, Code* code) {
 CodeSnippet* parseFromFile(char *fileName) {
 	// FILE * fopen(const char * path, const char * mode);
 	char line[1024];
+	int lengthOfCode = 0;
 	CodeSnippet* ret = null;
 	Code *code = createCode(NULL);
 
+	line[0] = '\0';
 	if (divider == null) {
 		printf("You must specify divider.\n");
 		return null;
 	}
-	
-	FILE *fp = fopen(fileName, "r");
+	FILE *fp = null;
+#ifdef _WIN32
+	if (fopen_s(&fp, fileName, "r") != 0) {
+		printf("Can not open file:%s.\n", fileName);
+		return null;
+	}
+#else
+	fopen(fileName, "r");
+#endif // _WIN32
+
 	if (fp == NULL) {
 		printf("Can not open file:%s.\n", fileName);
 		return null;
@@ -49,11 +60,14 @@ CodeSnippet* parseFromFile(char *fileName) {
 	while (!feof(fp)) 
     {
         fgets(line, 1024, fp);  //读取一行
-        // printf("%s\n", line);
+		lengthOfCode = strlen(line);
+		if (lengthOfCode == 0) {
+			continue;
+		}
 
         // Remove the last \n character
-        if (line[strlen(line) - 1] == '\n') {
-        	line[strlen(line) - 1] = '\0';
+        if (line[lengthOfCode - 1] == '\n') {
+        	line[lengthOfCode - 1] = '\0';
         }
 
         if (strcmp(divider, line) == 0) {
@@ -61,7 +75,10 @@ CodeSnippet* parseFromFile(char *fileName) {
         	code = createCode(NULL);
         	line[0] = '\0';
         } else {
-    		line[strlen(line)] = '\n';
+			if (sizeof(line) < lengthOfCode) {
+				line[lengthOfCode] = '\n';
+				line[lengthOfCode + 1] = '\0';
+			}
         	appendCode(code, line);
         }
     }

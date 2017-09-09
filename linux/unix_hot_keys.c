@@ -1,7 +1,31 @@
-#include <X11/Intrinsic.h>
-#include <X11/extensions/XTest.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
 
-#include "send_key_event.h"
+#include <X11/Xlib.h>
+
+#include "xhklib.h"
+#include "unix_hot_keys.h"
+
+int registerUnixHotKeys(void(*callbck)(xhkEvent, void *, void *, void *))
+{  
+    xhkConfig *hkconfig;
+    hkconfig = xhkInit(NULL);
+
+    xhkBindKey(hkconfig, 0, /*XK_Shift_L*/XK_Up, 0, xhkKeyPress, callbck, 0, 0, 0);
+
+    xhkBindKey(hkconfig, 0, XK_Left, 0, xhkKeyPress, callbck, 0, 0, 0);
+
+    xhkBindKey(hkconfig, 0, XK_Right, 0, xhkKeyPress, callbck, 0, 0, 0);
+
+    xhkBindKey(hkconfig, 0, XK_S, 0, xhkKeyPress, callbck, 0, 0, 0);
+
+    while (1) {
+        xhkPollKeys(hkconfig, 1);
+    }
+
+    xhkClose(hkconfig);
+}
 
 static void sendKey (KeySym keysym, KeySym modsym) {
 	Display * disp = XOpenDisplay(NULL); 
