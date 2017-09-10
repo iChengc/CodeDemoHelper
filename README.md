@@ -13,14 +13,18 @@ A tool for code demo. It used to paste code snippet one by one which prepared be
 
 Then follow the following steps to install:
 ```sh
-1. cd codeDemoHelper
+1. cd codeDemoHelper/linux
 2. make
 ```
+After a moment a named "cdh" executable file will generated.
+
+### Windows
+No need to install on windows, just run the CodeDemoHelper.exe under the folder 'win'
 
 ## How to use
 1. You should save all of the demo code snippets to one file, use **"--------"** to seperate the different code snippet.
 Please see the example file 1.txt
-2. Run the application CodeDemoHelper and input the code file path such as 1.txt
+2. Exeute the CodeDemoHelper application then input the code file path such as 1.txt
 After this all will done. 
 
 Enjoy it!!!
