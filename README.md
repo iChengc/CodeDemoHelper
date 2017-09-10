@@ -1,7 +1,7 @@
 # Code demo Helper
 A tool for code demo. It used to paste code snippet one by one which prepared before demo.
 ## How to install
-### Linux (ubuntu)
+ ### Linux (ubuntu)
 1. First you should download xclip use command: 
 ```sh
  sudo apt install xclip
@@ -11,15 +11,15 @@ A tool for code demo. It used to paste code snippet one by one which prepared be
  sudo apt-get install libxtst-dev
 ```
 
-Then follow the following steps to install:
+3. Then follow the following steps to install:
 ```sh
-1. cd codeDemoHelper/linux
-2. make
+cd codeDemoHelper/linux
+make
 ```
-After a moment a named "cdh" executable file will generated.
+4. After a moment a named "cdh" executable file will generated.
 
-### Windows
-No need to install on windows, just run the CodeDemoHelper.exe under the folder 'win'
+ ### Windows
+   No need to install on windows, just run the CodeDemoHelper.exe under the folder 'win'
 
 ## How to use
 1. You should save all of the demo code snippets to one file, use **"--------"** to seperate the different code snippet.
