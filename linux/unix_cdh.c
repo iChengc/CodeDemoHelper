@@ -84,5 +84,6 @@ int main()
     printf("Please input the resource file name:");
     scanf("%s", fileName);
     callback = demo_start(fileName, &onRegisterHotKeys, &sendPasteKeyEvent, &onError);
+    pollUnixHotKeys();
     return 0;
 }

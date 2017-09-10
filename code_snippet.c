@@ -48,7 +48,7 @@ CodeSnippet* parseFromFile(char *fileName) {
 		return null;
 	}
 #else
-	fopen(fileName, "r");
+	fp = fopen(fileName, "r");
 #endif // _WIN32
 
 	if (fp == NULL) {

@@ -45,10 +45,14 @@ FreeBSD
 __FreeBSD__
 */
 CodeSnippet *codeSnippets;
+
+/**
+ * The callback method to be invoked when need to send fake paste hot keys(ctrl+V). 
+ */
 void(*sendPasteHotKey)();
 
-// Call this when "Up key" is pressed.
-void printCode()
+// paste the code snippet, Called when "Up key" is pressed.
+void pasteCode()
 {
 	if (codeSnippets == null) {
 		return;
@@ -69,18 +73,27 @@ void printCode()
 	}
 }
 
+/**
+ * switch to previous code snippet. Called when "left key" was pressed
+ */
 void jump2PreSnippet() {
 	if (codeSnippets != null && codeSnippets->pre != null) {
 		codeSnippets = (*codeSnippets).pre;
 	}
 }
 
+/**
+ * switch to next code snippet. Called when "right key" was pressed
+ */
 void jump2NextSnippet() {
 	if (codeSnippets != null && codeSnippets->next != null) {
 		codeSnippets = codeSnippets->next;
 	}
 }
 
+/**
+ * Showing all of the code snippets, called when "down key" was pressed
+ */
 CodeSnippet * showCode() {
 	CodeSnippet *p = codeSnippets;
 	if (codeSnippets == null) {
@@ -126,7 +139,7 @@ HotKeyCallBack * demo_start(char *filePath, int(*onRegisterHotKey)(),
 		return null;
 	}
 	ret->next = &jump2NextSnippet;
-	ret->pasteCode = &printCode;
+	ret->pasteCode = &pasteCode;
 	ret->previous = &jump2PreSnippet;
 	ret->showCode = &showCode;
 	return ret;

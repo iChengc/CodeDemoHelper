@@ -6,20 +6,23 @@
 
 #include "xhklib.h"
 #include "unix_hot_keys.h"
+xhkConfig *hkconfig;
 
-int registerUnixHotKeys(void(*callbck)(xhkEvent, void *, void *, void *))
-{  
-    xhkConfig *hkconfig;
+int registerUnixHotKeys(void(*callback)(xhkEvent, void *, void *, void *))
+{
     hkconfig = xhkInit(NULL);
 
-    xhkBindKey(hkconfig, 0, /*XK_Shift_L*/XK_Up, 0, xhkKeyPress, callbck, 0, 0, 0);
+    xhkBindKey(hkconfig, 0, /*XK_Shift_L*/XK_Up, 0, xhkKeyPress, callback, 0, 0, 0);
 
-    xhkBindKey(hkconfig, 0, XK_Left, 0, xhkKeyPress, callbck, 0, 0, 0);
+    xhkBindKey(hkconfig, 0, XK_Left, 0, xhkKeyPress, callback, 0, 0, 0);
 
-    xhkBindKey(hkconfig, 0, XK_Right, 0, xhkKeyPress, callbck, 0, 0, 0);
+    xhkBindKey(hkconfig, 0, XK_Right, 0, xhkKeyPress, callback, 0, 0, 0);
 
-    xhkBindKey(hkconfig, 0, XK_S, 0, xhkKeyPress, callbck, 0, 0, 0);
+    xhkBindKey(hkconfig, 0, XK_Down, 0, xhkKeyPress, callback, 0, 0, 0);
+    return 1;
+}
 
+void pollUnixHotKeys() {
     while (1) {
         xhkPollKeys(hkconfig, 1);
     }
