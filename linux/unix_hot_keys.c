@@ -6,19 +6,57 @@
 
 #include "xhklib.h"
 #include "unix_hot_keys.h"
+#include "utils.h"
 xhkConfig *hkconfig;
+HotKeyCallBack *callback;
 
-int registerUnixHotKeys(void(*callback)(xhkEvent, void *, void *, void *))
+void onShowCode(CodeSnippet *p) {
+	while (p != null) {
+		printf("%d.\n%s\n\n", (*p).order, (*p).code->code);
+		p = (*p).next;
+	}
+}
+
+static void onPressUpKey(xhkEvent e, void *r1, void *r2, void *r3) {
+    if (callback == null) {
+	return;
+    }
+    callback->pasteCode();
+}
+
+static void onPressDownKey(xhkEvent e, void *r1, void *r2, void *r3) {
+    if (callback == null) {
+	return;
+    }
+    onShowCode(callback->showCode());
+}
+
+static void onPressLeftKey(xhkEvent e, void *r1, void *r2, void *r3) {
+    if (callback == null) {
+	return;
+    }
+    callback->previous();
+}
+
+static void onPressRightKey(xhkEvent e, void *r1, void *r2, void *r3) {
+    if (callback == null) {
+	return;
+    }
+    callback->next();
+}
+
+
+int registerUnixHotKeys(HotKeyCallBack *cb)
 {
     hkconfig = xhkInit(NULL);
+    callback = cb;
+    xhkBindKey(hkconfig, 0, /*XK_Shift_L*/XK_Up, 0, xhkKeyPress, &onPressUpKey, 0, 0, 0);
 
-    xhkBindKey(hkconfig, 0, /*XK_Shift_L*/XK_Up, 0, xhkKeyPress, callback, 0, 0, 0);
+    xhkBindKey(hkconfig, 0, XK_Left, 0, xhkKeyPress, &onPressLeftKey, 0, 0, 0);
 
-    xhkBindKey(hkconfig, 0, XK_Left, 0, xhkKeyPress, callback, 0, 0, 0);
+    xhkBindKey(hkconfig, 0, XK_Right, 0, xhkKeyPress, &onPressRightKey, 0, 0, 0);
 
-    xhkBindKey(hkconfig, 0, XK_Right, 0, xhkKeyPress, callback, 0, 0, 0);
-
-    xhkBindKey(hkconfig, 0, XK_Down, 0, xhkKeyPress, callback, 0, 0, 0);
+    xhkBindKey(hkconfig, 0, XK_Down, 0, xhkKeyPress, &onPressDownKey, 0, 0, 0);
     return 1;
 }
 
@@ -44,8 +82,8 @@ static void sendKey (KeySym keysym, KeySym modsym) {
  	}
  	/* Generate regular key press and release */
  	XTestFakeKeyEvent (disp, keycode, True, 0);
- 	usleep(500000);
-    XFlush(disp);
+ 	usleep(150000);
+    	XFlush(disp);
 	XTestFakeKeyEvent (disp, keycode, False, 0); 
  
  	/* Generate modkey release */

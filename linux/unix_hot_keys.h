@@ -4,7 +4,8 @@
 #include <X11/Xlib.h>
 
 #include "xhklib.h"
+#include "code_demo_helper.h"
 
-int registerUnixHotKeys(void (*callback)(xhkEvent, void *, void *, void *));
+int registerUnixHotKeys(HotKeyCallBack *);
 void sendPasteKeyEvent();
 #endif

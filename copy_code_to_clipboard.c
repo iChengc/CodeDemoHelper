@@ -8,6 +8,7 @@
 #endif // _WIN32
 
 void copyCode2clipboard(char *code) {
+
 	if (code == NULL) {
 		return;
 	}
@@ -28,11 +29,8 @@ void copyCode2clipboard(char *code) {
 #ifdef _WIN32
 	fopen_s(&fp, cacheFile, "w+");
 #else
-	fopen(cacheFile, "w");
+	fp = fopen(cacheFile, "w");
 #endif // _WIN32
-
-
-	
 	if (fp == NULL) {
 		return;
 	}
@@ -40,14 +38,11 @@ void copyCode2clipboard(char *code) {
 	fwrite(code, sizeof(char), strlen(code), fp);
 	fclose(fp);
 #ifdef _WIN32
-	// use xclip tool to copy the code snippet to the system clipboard
 	//system(cpShell);
-	// remove the cache file.
 	//system("DEL -F .\\.cache ");
 	ShellExecute(null, "open", cpShell, null, null, SW_HIDE);
 	ShellExecute(null, "open", "DEL -F .\\.cache ", null, null, SW_HIDE);
 #else
-
 	// use xclip tool to copy the code snippet to the system clipboard
 	system(cpShell);
 	// remove the cache file.

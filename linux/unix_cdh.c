@@ -40,14 +40,8 @@ FreeBSD
 __FreeBSD__
 */
 HotKeyCallBack * callback;
-void onShowCode(CodeSnippet *p) {
-	while (p != null) {
-		printf("%d.\n%s\n\n", (*p).order, (*p).code->code);
-		p = (*p).next;
-	}
-}
 
-
+/*
 void onHotKey(xhkEvent e, void *r1, void *r2, void *r3) {
     if (callback == null) {
         return;
@@ -67,10 +61,10 @@ void onHotKey(xhkEvent e, void *r1, void *r2, void *r3) {
 	    onShowCode(callback->showCode());
 	    break;
     }
-}
+}*/
 
 int onRegisterHotKeys() {
-    return registerUnixHotKeys(&onHotKey);
+    return registerUnixHotKeys(callback);
 }
 
 void onError(char *msg) {
