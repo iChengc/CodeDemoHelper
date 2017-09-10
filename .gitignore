@@ -1,3 +1,5 @@
 *~
 *.o
 .cache
+Debug/
+Release/
