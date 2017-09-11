@@ -57,15 +57,14 @@ CodeSnippet* parseFromFile(char *fileName) {
 	}
 
 	// size_t fread ( void *buffer, size_t size, size_t count, FILE *stream) ;
-	while (!feof(fp)) 
-    {
+	while (!feof(fp)) {
         fgets(line, 1024, fp);  //读取一行
 		lengthOfCode = strlen(line);
 		if (lengthOfCode == 0) {
 			continue;
 		}
 
-        // Remove the last \n character
+        // Remove the last \n character to compare with the divider 
         if (line[lengthOfCode - 1] == '\n') {
         	line[lengthOfCode - 1] = '\0';
         }
@@ -75,10 +74,14 @@ CodeSnippet* parseFromFile(char *fileName) {
         	code = createCode(NULL);
         	line[0] = '\0';
         } else {
-			if (sizeof(line) < lengthOfCode) {
-				line[lengthOfCode] = '\n';
-				line[lengthOfCode + 1] = '\0';
-			}
+			/*if (sizeof(line) < lengthOfCode) {
+				line[lengthOfCode - 1] = '\n';
+				line[lengthOfCode] = '\0';
+			}*/
+
+			// reset the last charater to '\n'
+			line[lengthOfCode - 1] = '\n';
+			line[lengthOfCode] = '\0';
         	appendCode(code, line);
         }
     }
